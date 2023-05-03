@@ -1,0 +1,61 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+
+body {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     font-family: sans-serif;
+     background-color: rgb(136, 237, 168);
+     padding: 1rem;
+}
+
+.container {
+     display: flex;
+     flex-wrap: wrap;
+     width: 480px;
+     margin-top: 3rem;
+     perspective: 1000px;
+}
+
+.card {
+     position: relative;
+     border: 1px solid rgb(63, 221, 15);
+     border-radius: 4px;
+     cursor: pointer;
+     margin: 10px;
+     height: 100px;
+     width: 100px;
+     transform-style: preserve-3d;
+     transform: rotateY(180deg);
+     transition: transform 0.4s linear;
+}
+
+.card .front,
+.card .back {
+     position: absolute;
+     background-color: #fff;
+     backface-visibility: hidden;
+     border-radius: 5px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     font-size: 30px;
+}
+
+.show {
+     transform: rotateY(0deg);
+}
+
+.card .back {
+     transform: rotateY(180deg);
+}
